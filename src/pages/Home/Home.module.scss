@@ -1,1 +1,42 @@
 @use '../../styles/variables' as *;
+
+.homeContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .contentRow {
+    width: 100%;
+    height: calc(100% - 10rem);
+    display: flex;
+    justify-content: center;
+
+    .tutorialContainer {
+      height: 100%;
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  
+      p {
+        color: $text-color;
+      }
+    }
+  
+    .qrCodeContainer {
+      height: 100%;
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  
+      .qrCode {
+        width: 80%;
+        height: 80%;
+      }
+    }
+  }
+}

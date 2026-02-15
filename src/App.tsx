@@ -3,13 +3,15 @@ import { Router, Route } from '@solidjs/router';
 
 // routes
 const Home = lazy(() => import('./pages/Home/Home'));
-const NotFound = lazy(() => import('./pages/NotFound'));
+// const LoadPlaylist = lazy(() => import('./pages/LoadPlaylist/LoadPlaylist'));
+const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
 
 const App: Component = () => {
   return (
     <>
       <Router>
         <Route path="/" component={Home} />
+        {/* <Route path="/load-playlist" component={LoadPlaylist} /> */}
         <Route path="*404" component={NotFound} />
       </Router>
     </>

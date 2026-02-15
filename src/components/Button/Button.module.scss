@@ -1,0 +1,21 @@
+@use '../../styles/variables' as *;
+
+.btn {
+  width: fit-content;
+  height: 3rem;
+  border-radius: 960px;
+  padding: 0 1.5rem;
+
+  color: $comp-text-color;
+  background-color: $comp-bg-color;
+  border: none;
+  cursor: pointer;
+
+  @media (min-width: 1000px) and (min-height: 600px) {
+    border-radius: 1280px;
+  }
+
+  @media (min-width: 1500px) {
+    border-radius: 1920px;
+  }
+}

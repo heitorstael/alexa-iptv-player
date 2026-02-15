@@ -1,0 +1,18 @@
+$devices: (
+  'show5': (width: 960px, height: 480px),
+  'show8': (width: 1280px, height: 800px),
+  'show15': (width: 1920px, height: 1080px)
+);
+
+@function get-device-width($device) {
+  @return map-get(map-get($devices, $device), width);
+}
+
+// colors
+$bg-color: #232f3e;
+$text-color: #FAFAFA;
+$comp-text-color: #1e2222;
+$comp-bg-color: #ffffffa5;
+
+// typography
+$font: Helvetica, Verdana, sans-serif;
