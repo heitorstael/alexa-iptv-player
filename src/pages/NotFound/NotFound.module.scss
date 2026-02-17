@@ -5,12 +5,20 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 
   color: $text-color;
 
-  h1 {
-    margin-bottom: 2rem;
+  .contentRow {
+    width: 80%;
+    height: calc(100% - 10rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    p {
+      font-size: 1.5rem;
+    }
   }
 }
