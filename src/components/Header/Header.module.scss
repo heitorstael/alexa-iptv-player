@@ -1,10 +1,38 @@
 @use '../../styles/variables' as *;
 
-.headerContainer {
-  height: 5rem;
-  width: 100%;
+.simpleHeader {
+  height: 7rem;
+  width: 90%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   color: $text-color;
+}
+
+.navHeader {
+  height: 7rem;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $text-color;
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    min-width: 50%;
+    display: flex;
+    align-items: center;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      font-size: 1.5rem;
+    }
+  }
+
 }

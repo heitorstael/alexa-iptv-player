@@ -1,5 +1,8 @@
 import styles from './Header.module.scss';
 
+import { A } from "@solidjs/router";
+import BackIcon from '../BackIcon/BackIcon';
+
 interface HeaderProps {
   backButton: boolean;
   backText?: string;
@@ -9,10 +12,10 @@ interface HeaderProps {
 const Header = (props: HeaderProps) => {
   return (
     <>
-      <header class={styles.headerContainer}>
+      <header class={props.backButton ? styles.navHeader : styles.simpleHeader}>
         {props.backButton &&
           <nav>
-            <a href="http://">&lt;</a>
+            <A href={props.backPage || ""}><BackIcon /> {props.backText}</A>
           </nav>
         }
         <h1>Alexa IPTV Player</h1>
