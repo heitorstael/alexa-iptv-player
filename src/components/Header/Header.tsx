@@ -1,3 +1,4 @@
+import { Show } from 'solid-js';
 import styles from './Header.module.scss';
 
 import { A } from "@solidjs/router";
@@ -13,11 +14,11 @@ const Header = (props: HeaderProps) => {
   return (
     <>
       <header class={props.backButton ? styles.navHeader : styles.simpleHeader}>
-        {props.backButton &&
+        <Show when={props.backButton}>
           <nav>
             <A href={props.backPage || ""}><BackIcon /> {props.backText}</A>
           </nav>
-        }
+        </Show>
         <h1>Alexa IPTV Player</h1>
       </header>
     </>

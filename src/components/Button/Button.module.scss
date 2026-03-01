@@ -11,6 +11,11 @@
   border: none;
   cursor: pointer;
 
+  &.secondary {
+    color: $sec-comp-text-color;
+    background-color: $sec-comp-bg-color;
+  }
+
   @media (min-width: 1000px) and (min-height: 600px) {
     border-radius: 1280px;
   }
