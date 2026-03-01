@@ -1,0 +1,28 @@
+@use '../../styles/variables' as *;
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+
+  .labelText {
+    color: $text-color;
+    font-size: 1.5rem;
+    margin-bottom: 14px;
+  }
+  
+  .inputBox {
+    background-color: transparent;
+    padding: 10px;
+    border: 1px solid $comp-bg-color;
+    border-radius: 10px;
+    color: $comp-bg-color;
+    width: 100%;
+
+    &:disabled {
+      border: none;
+      cursor: not-allowed;
+    }
+  }
+}
