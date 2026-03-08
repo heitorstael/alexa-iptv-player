@@ -4,7 +4,6 @@ import styles from './Home.module.scss';
 
 import Button from '../../components/Button/Button';
 import Header from '../../components/Header/Header';
-import qrCodePlaylist from '../../assets/iptv-playlist-qrcode.png';
 
 const Home: Component = () => {
   const navigate = useNavigate();
@@ -22,8 +21,9 @@ const Home: Component = () => {
             <Button onClick={goLoadPlaylist} btnText="I already have the M3U URL" />
           </section>
           <section class={styles.qrCodeContainer}>
-            <div ></div>
-            <img src={qrCodePlaylist} alt="QR Code to IPTV Playlist" class={styles.qrCode} />
+            <div class={styles.qrCode}>
+              <img src="/images/iptv-playlist-qrcode.png" alt="QR Code to IPTV Playlist" />
+            </div>
           </section>
         </div>
       </main>
