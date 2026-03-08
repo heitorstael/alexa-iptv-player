@@ -1,11 +1,11 @@
 import type { Component } from 'solid-js';
 import { onMount, createEffect, createSignal, Show } from 'solid-js';
 import { useNavigate } from '@solidjs/router';
-import { createStore } from 'solid-js/store';
 
 import { fetchAndParseM3U } from '../../services/playlist';
 
-import { Playlist } from '../../types/playlist';
+import type { Playlist } from '../../types/playlist';
+import { usePlaylist } from "../../context/Playlist";
 
 import styles from './LoadPlaylist.module.scss';
 
@@ -21,17 +21,14 @@ const LoadPlaylist: Component = () => {
   const savedName = localStorage.getItem('iptv_playlist_name') || '';
   const savedUrl = localStorage.getItem('iptv_playlist_url') || '';
 
-  const emptyPlaylist = {
-    name: '',
-    url: '',
+  const emptyPlaylist: Playlist = {
+    name: "",
+    url: "",
     channels: []
   };
 
-  const [playlist, setPlaylist] = createStore<Playlist>({
-    name: savedName,
-    url: savedUrl,
-    channels: []
-  });
+  const { playlist, setPlaylist } = usePlaylist();
+
   const [isLoading, setIsLoading] = createSignal(false);
   const [errorMessage, setErrorMessage] = createSignal('');
 
@@ -78,8 +75,11 @@ const LoadPlaylist: Component = () => {
   const numberOfChannels = () => playlist.channels.length;
 
   onMount(() => {
-    if (playlist.url) {
-      loadChannelsFromUrl(playlist.url, playlist.name);
+    const playlistUrl = savedUrl || playlist.url;
+    const playlistName = savedName || playlist.name;
+
+    if (playlistUrl && !playlist.channels.length) {
+      loadChannelsFromUrl(playlistUrl, playlistName);
     }
   });
 

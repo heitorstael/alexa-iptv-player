@@ -1,0 +1,51 @@
+@use '../../styles/variables' as *;
+
+.selectStreamContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .contentRow {
+    width: 100%;
+    height: calc(100% - 10rem);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+    .filterContainer {
+      width: 90%;
+      height: 15%;
+    }
+
+    .channelsContainer {
+      width: 90%;
+      height: 85%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      position: relative;
+      
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      scrollbar-width: none;
+    }
+
+    .innerVirtualContainer {
+      height: 100%;
+      position: relative;
+    }
+
+    .virtualItemWrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
