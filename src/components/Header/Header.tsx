@@ -8,6 +8,7 @@ interface HeaderProps {
   backButton: boolean;
   backText?: string;
   backPage?: string;
+  subText?: string;
 }
 
 const Header = (props: HeaderProps) => {
@@ -17,6 +18,9 @@ const Header = (props: HeaderProps) => {
         <Show when={props.backButton}>
           <nav>
             <A href={props.backPage || ""}><BackIcon /> {props.backText}</A>
+            <Show when={props.subText}>
+              <span>{props.subText}</span>
+            </Show>
           </nav>
         </Show>
         <h1>Alexa IPTV Player</h1>
